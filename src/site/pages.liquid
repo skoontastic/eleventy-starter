@@ -1,0 +1,33 @@
+---
+title: Pages
+layout: main
+pagination:
+    data: directus_pages
+    size: 1
+    alias: directus_page
+permalink: "{{ directus_page.slug }}/"
+---
+<h1 class="text-4xl font-bold">{{ directus_page.title }}</h1>
+<h2 class="text-2xl font-bold">{{ directus_page.subhead }}</h2>
+{{ directus_page.body }}
+{% for feature in directus_page.repeater %}
+    <div class="mb-4">
+        {{ feature.feature_heading }}
+        <div class="mb-2">
+            {% for subfeature in feature.sub_feature %}
+                <ul class="pl-8 mb-2 list-disc list-inside">
+                    <li>
+                        {{ subfeature.sub_feature_heading }}
+                        <ul class="pl-8 list-disc list-inside">
+                            {% for listItem in subfeature.sub_feature_list %}
+                                <li>
+                                    {{ listItem.detail }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

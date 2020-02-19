@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta content="initial-scale=1, viewport-fit=cover" name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+        <title>{{ title or 'Eleventy Starter' }}</title>
+        <link href="/assets/css/app.css" rel="stylesheet"/>
+        <script defer src="/assets/js/app.js"></script>
+    </head>
+    <body data-controller="hello">
+        {% include header %}
+        <div class="container">
+            {{ content  }}
+        </div>
+        {% include footer %}
+    </body>
+</html>

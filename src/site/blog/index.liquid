@@ -1,0 +1,14 @@
+---
+title: Blog!
+body: Zippidy yay
+layout: main
+---
+<h1>{{ title }}</h1>
+<p>{{ body }}</p>
+<ul>
+    {%- for item in directus_blogs %}
+        <li>
+            <a href="/blog/{{ item.slug }}/">{{ item.title }}</a>
+        </li>
+    {%- endfor %}
+</ul>
